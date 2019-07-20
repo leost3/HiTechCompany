@@ -1,0 +1,36 @@
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csprojAssemblyReference.cache
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.Gui.LoginForm.resources
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.Properties.Resources.resources
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csproj.GenerateResource.cache
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csproj.CoreCompileInputs.cache
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.exe.config
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.exe
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.pdb
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.exe
+C:\Users\Gene\Desktop\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.pdb
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.exe.config
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.exe
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\bin\Debug\HiTech.pdb
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csprojAssemblyReference.cache
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.Gui.LoginForm.resources
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.Properties.Resources.resources
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csproj.GenerateResource.cache
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.csproj.CoreCompileInputs.cache
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.exe
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.pdb
+C:\Francieli\LaSalle\2 - MULTI-TIER APP\FinalMultTier\HiTech\HiTech\obj\Debug\HiTech.Gui.MainForm.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\bin\Debug\HiTech.exe.config
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\bin\Debug\HiTech.exe
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\bin\Debug\HiTech.pdb
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.csprojAssemblyReference.cache
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.Gui.LoginForm.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.Properties.Resources.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.csproj.GenerateResource.cache
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.csproj.CoreCompileInputs.cache
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.exe
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.pdb
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.Gui.MisManagerForm.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.Accountant.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.Inventory_Controller.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.OrdersClark.resources
+C:\Users\leo_s\Desktop\Lasalle\dotNET\FinalProject\HiTech\HiTech\obj\Debug\HiTech.SalesManager.resources
