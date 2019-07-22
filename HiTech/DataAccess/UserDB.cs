@@ -130,7 +130,7 @@ namespace HiTech.DataAccess
                 }
                 cmd.Connection = connDB;
                 cmd.CommandText = string.Format("update [User] set username='{0}', " +
-                    "password='{1}', FirstName='{2}' , LastName='{3}', role_id='{4}' where UserId='{5}'", 
+                    "password='{1}', FirstName='{2}', LastName='{3}', role_id='{4}' where UserId='{5}'", 
                     user.Username, user.Password, user.FirstName, user.LastName, user.RoleId, user.UserId);
 
                 cmd.ExecuteNonQuery();

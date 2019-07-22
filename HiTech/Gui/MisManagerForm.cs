@@ -170,14 +170,13 @@ namespace HiTech.Gui
             }
             else
             {
-                bool found = true;
+                //bool found = true;
                 User user = new User();
                 user.UserId = Convert.ToInt32(txtSearch.Text);
                 string firstName = user.SearchUser(user);
 
                 
                     MessageBox.Show("Employee / user FirstName is: " + firstName);
-         
             }
         }
     }
