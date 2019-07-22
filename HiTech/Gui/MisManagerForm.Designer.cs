@@ -33,7 +33,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnShowBooks = new System.Windows.Forms.Button();
+            this.btnListEmps = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -52,20 +52,27 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
+            this.columnHeader1,
+            this.columnHeader2,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader3});
             this.listView1.Location = new System.Drawing.Point(12, 450);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(504, 97);
+            this.listView1.Size = new System.Drawing.Size(671, 97);
             this.listView1.TabIndex = 29;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeader4
             // 
@@ -74,6 +81,7 @@
             // 
             // columnHeader5
             // 
+            this.columnHeader5.DisplayIndex = 1;
             this.columnHeader5.Text = "First Name";
             this.columnHeader5.Width = 187;
             // 
@@ -92,14 +100,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnShowBooks
+            // btnListEmps
             // 
-            this.btnShowBooks.Location = new System.Drawing.Point(430, 410);
-            this.btnShowBooks.Name = "btnShowBooks";
-            this.btnShowBooks.Size = new System.Drawing.Size(75, 23);
-            this.btnShowBooks.TabIndex = 27;
-            this.btnShowBooks.Text = "List";
-            this.btnShowBooks.UseVisualStyleBackColor = true;
+            this.btnListEmps.Location = new System.Drawing.Point(430, 410);
+            this.btnListEmps.Name = "btnListEmps";
+            this.btnListEmps.Size = new System.Drawing.Size(75, 23);
+            this.btnListEmps.TabIndex = 27;
+            this.btnListEmps.Text = "List";
+            this.btnListEmps.UseVisualStyleBackColor = true;
+            this.btnListEmps.Click += new System.EventHandler(this.btnListEmps_Click);
             // 
             // btnDelete
             // 
@@ -109,6 +118,7 @@
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -251,11 +261,25 @@
             this.label12.TabIndex = 56;
             this.label12.Text = "Password";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 3;
+            this.columnHeader1.Text = "Username";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 4;
+            this.columnHeader2.Text = "Password";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "RoleID";
+            // 
             // MisManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 613);
+            this.ClientSize = new System.Drawing.Size(1136, 613);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtUsername);
@@ -269,7 +293,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnShowBooks);
+            this.Controls.Add(this.btnListEmps);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSearch);
@@ -279,6 +303,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MisManagerForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MisManagerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +313,7 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnShowBooks;
+        private System.Windows.Forms.Button btnListEmps;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
@@ -310,5 +335,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

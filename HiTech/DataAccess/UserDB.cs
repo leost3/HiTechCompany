@@ -49,7 +49,7 @@ namespace HiTech.DataAccess
         }
 
 
-        public static bool saveUser(User user)
+        public static bool SaveUser(User user)
         {
             bool result = true;
             try
@@ -73,5 +73,51 @@ namespace HiTech.DataAccess
             }
             return result;
         }
+
+
+        public static DataTable ListUsers()
+        {
+            if (connDB.State == ConnectionState.Closed)
+            {
+                connDB = UtilityDB.ConnectDB();
+                cmd = new SqlCommand();
+            }
+
+            cmd.Connection = connDB;
+            cmd.CommandText = "select * from [User]";
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            reader.Close();
+            cmd.Dispose();
+            connDB.Close();
+            return dt;
+        }
+
+        public static bool DeleteUsers(int EmployeeId)
+        {
+            bool result = true;
+            try
+            {
+
+                if (connDB.State == ConnectionState.Closed)
+                {
+                    connDB = UtilityDB.ConnectDB();
+                    cmd = new SqlCommand();
+                }
+                cmd.Connection = connDB;
+                cmd.CommandText = string.Format("delete from [User] where UserId ='{0}'", EmployeeId);
+                cmd.ExecuteNonQuery();
+                connDB.Close();
+            }
+            catch (Exception)
+            {
+                result = false;
+                // throw;
+            }
+
+            return result;
+        }
+
     }
 }

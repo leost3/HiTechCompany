@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,17 @@ namespace HiTech.Business
 
         public bool Save(User user)
         {
-            return UserDB.saveUser(user);
+            return UserDB.SaveUser(user);
+        }
+        public bool Delete(int userId)
+        {
+            return UserDB.DeleteUsers(userId);
         }
 
-    
+        public DataTable listUsers()
+        {
+            return UserDB.ListUsers();
+        }
+
     }
 }

@@ -39,7 +39,7 @@ namespace HiTech.Gui
                 //create object
                 User user = new User();
                 //fill the object with textbox input
-                //user.UserId = Convert.ToInt32(txtUserId.Text);
+                user.UserId = Convert.ToInt32(txtUserId.Text);
                 user.FirstName = txtFn.Text;
                 user.LastName = txtLn.Text;
                 user.Username = txtUsername.Text;
@@ -55,57 +55,83 @@ namespace HiTech.Gui
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void label9_Click(object sender, EventArgs e)
+        private void populateListView(DataTable data)
         {
+            foreach (DataRow row in data.Rows)
+            {
+                ListViewItem item = new ListViewItem(row[0].ToString());
+                for (int i = 1; i < data.Columns.Count; i++)
+                {
+                    item.SubItems.Add(row[i].ToString());
+                }
+                listView1.Items.Add(item);
+            }
+        }
+
+
+        private void btnListEmps_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            var data = user.listUsers();
+            if (listView1.Items.Count > 0)
+            {
+                listView1.Items.Clear();
+                populateListView(data);
+            }
+            else
+            {
+                populateListView(data);
+            }
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                txtUserId.Text = item.SubItems[0].Text;
+                txtUsername.Text = item.SubItems[1].Text;
+                txtPassword.Text = item.SubItems[2].Text;
+                txtFn.Text = item.SubItems[3].Text;
+                txtLn.Text = item.SubItems[4].Text;
+                txtRoleID.Text = item.SubItems[5].Text;
+
+            }
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void MisManagerForm_Load(object sender, EventArgs e)
         {
+            listView1.FullRowSelect = true;
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (txtUserId.Text == "" || txtFn.Text == "" || txtLn.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtRoleID.Text == "")
+            {
+                MessageBox.Show("Employee/User can not be empty. You should Enter data!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                User user = new User();
+                user.UserId = Convert.ToInt32(txtUserId.Text);
+                user.FirstName = txtFn.Text;
+                user.LastName = txtLn.Text;
+                user.Username = txtUsername.Text;
+                user.Password = txtPassword.Text;
+                user.RoleId = Convert.ToInt32(txtRoleID.Text);
 
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
+                if (user.Delete(user.UserId))
+                {
+                    MessageBox.Show("User is deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                ClearUserTxt();
+            }
         }
     }
 }
