@@ -44,5 +44,16 @@ namespace HiTech.Business
             return UserDB.ListUsers();
         }
 
+        public bool UpdateUsers(User user)
+        {
+            return UserDB.UpdateUser(user);
+        }
+
+        public string SearchUser(User user)
+        {
+            return UserDB.SearchUser(user);
+        }
+
+
     }
 }

@@ -99,7 +99,6 @@ namespace HiTech.DataAccess
             bool result = true;
             try
             {
-
                 if (connDB.State == ConnectionState.Closed)
                 {
                     connDB = UtilityDB.ConnectDB();
@@ -117,6 +116,54 @@ namespace HiTech.DataAccess
             }
 
             return result;
+        }
+
+        public static bool UpdateUser(User user)
+        {
+            bool res = true;
+            try
+            {
+                if (connDB.State == ConnectionState.Closed)
+                {
+                    connDB = UtilityDB.ConnectDB();
+                    cmd = new SqlCommand();
+                }
+                cmd.Connection = connDB;
+                cmd.CommandText = string.Format("update [User] set username='{0}', " +
+                    "password='{1}', FirstName='{2}' , LastName='{3}', role_id='{4}' where UserId='{5}'", 
+                    user.Username, user.Password, user.FirstName, user.LastName, user.RoleId, user.UserId);
+
+                cmd.ExecuteNonQuery();
+                connDB.Close();
+
+            }
+            catch (Exception)
+            {
+                res = false;
+                throw;
+            }
+            return res;
+        }
+
+        public static string SearchUser(User user)
+        {
+            if (connDB.State == System.Data.ConnectionState.Closed)
+            {
+                connDB = UtilityDB.ConnectDB();
+                cmd = new SqlCommand();
+            }
+
+            //cmd.Connection = connDB;
+            //cmd.CommandText = string.Format("SELECT [User] FROM Employee WHERE UserId='{0}'", UserId);
+            //string FirstName = (String)cmd.ExecuteScalar();
+            //connDB.Close();
+            //return FirstName;
+
+            cmd.Connection = connDB;
+            cmd.CommandText = string.Format("SELECT FirstName FROM [User] WHERE UserId='{0}'", user.UserId);
+            string FirstName = (String)cmd.ExecuteScalar();
+            connDB.Close();
+            return FirstName;
         }
 
     }

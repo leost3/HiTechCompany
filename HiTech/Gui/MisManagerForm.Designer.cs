@@ -44,7 +44,7 @@
             this.txtLn = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtRoleID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -87,6 +87,7 @@
             // 
             // columnHeader6
             // 
+            this.columnHeader6.DisplayIndex = 2;
             this.columnHeader6.Text = "Last Name";
             this.columnHeader6.Width = 181;
             // 
@@ -128,6 +129,7 @@
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -137,6 +139,7 @@
             this.btnSearch.TabIndex = 24;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtFn
             // 
@@ -197,12 +200,12 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "MIS Manager";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(408, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 22);
-            this.textBox1.TabIndex = 33;
+            this.txtSearch.Location = new System.Drawing.Point(408, 97);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(112, 22);
+            this.txtSearch.TabIndex = 33;
             // 
             // label4
             // 
@@ -287,7 +290,7 @@
             this.Controls.Add(this.txtRoleID);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtLn);
             this.Controls.Add(this.label2);
@@ -327,7 +330,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtRoleID;
         private System.Windows.Forms.Label label10;

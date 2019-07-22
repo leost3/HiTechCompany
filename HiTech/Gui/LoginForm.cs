@@ -36,7 +36,6 @@ namespace HiTech.Gui
                     
                     if (id == 1)
                     {
-                        MessageBox.Show("Mis Manager");
                         MisManagerForm mainform = new MisManagerForm();
                         this.Hide();
                         mainform.Show();

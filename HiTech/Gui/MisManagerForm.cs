@@ -133,5 +133,53 @@ namespace HiTech.Gui
                 ClearUserTxt();
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtUserId.Text == "" || txtFn.Text == "" || txtLn.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" || txtRoleID.Text == "")
+            {
+                MessageBox.Show("Can not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                User user = new User();
+
+                user.UserId = Convert.ToInt32(txtUserId.Text);
+                user.FirstName = txtFn.Text;
+                user.LastName = txtLn.Text;
+                user.Username = txtUsername.Text;
+                user.Password = txtPassword.Text;
+                user.RoleId = Convert.ToInt32(txtRoleID.Text);
+
+                if (user.UpdateUsers(user))
+                {
+                    MessageBox.Show("Employee Update correctly");
+                }
+                else
+                    MessageBox.Show("Not Update!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClearUserTxt();
+                //txtEmployeeId.Enabled = false;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Can not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                bool found = true;
+                User user = new User();
+                user.UserId = Convert.ToInt32(txtSearch.Text);
+                string firstName = user.SearchUser(user);
+
+                
+                    MessageBox.Show("Employee / user FirstName is: " + firstName);
+         
+            }
+        }
     }
+    
 }
