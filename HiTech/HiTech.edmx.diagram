@@ -7,6 +7,10 @@
       <Diagram DiagramId="4f2b9790e9974b95b7bb4440e21493e2" Name="Diagram1">
         <EntityTypeShape EntityType="HiTech_DBModel.Book" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HiTech_DBModel.Order" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HiTech_DBModel.Author" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="HiTech_DBModel.Publisher" Width="1.5" PointX="0.75" PointY="8.625" />
+        <AssociationConnector Association="HiTech_DBModel.FK_Books_Author1" />
+        <AssociationConnector Association="HiTech_DBModel.FK_Books_Publishers1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

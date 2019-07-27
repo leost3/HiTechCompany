@@ -133,5 +133,64 @@ namespace HiTech
             MessageBox.Show("Order removed successfully");
             cleanText();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
+            int customerId = Convert.ToInt32(txtSearchOrderByCID.Text);
+            var orderList = HiTechEntitity.Orders.Where(x => x.Customer_ID == customerId).ToList<Order>();
+            if (orderList.Count != 0)
+            {
+                listView1.Items.Clear();
+                foreach (var order in orderList)
+                {
+                    ListViewItem item = new ListViewItem(Convert.ToString(order.Customer_ID));
+                    item.SubItems.Add(Convert.ToString(order.order_ID));
+                    item.SubItems.Add(Convert.ToString(order.ISBN));
+                    item.SubItems.Add(Convert.ToString(order.Qte));
+                    item.SubItems.Add(order.OrderedBy);
+                    item.SubItems.Add(Convert.ToString(order.total));
+                    listView1.Items.Add(item);
+                }
+            }else
+            {
+                MessageBox.Show("Custmer does not have orders", "Error");
+            }
+        }
+
+        
+        // WHy it doesnt go to the else??
+        private void btnSearchOrder_Click_1(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
+
+            int orderId = Convert.ToInt32(txtSearchOrderByOrderID.Text);
+
+            var orderList = from order in HiTechEntitity.Orders
+                            where order.order_ID == orderId
+                            select order
+                            ;
+
+            listView1.Items.Clear();
+            if (orderList !=  null)
+            {
+                foreach (var order in orderList)
+                {
+                    //order.Customer_ID
+                    ListViewItem item = new ListViewItem(Convert.ToString(order.Customer_ID));
+                    item.SubItems.Add(Convert.ToString(order.order_ID));
+                    item.SubItems.Add(Convert.ToString(order.ISBN));
+                    item.SubItems.Add(Convert.ToString(order.Qte));
+                    item.SubItems.Add(order.OrderedBy);
+                    item.SubItems.Add(Convert.ToString(order.total));
+                    listView1.Items.Add(item);
+                }
+            }
+            if (orderList == null)
+            {
+                MessageBox.Show("Order does not exist", "Error");
+            }
+            
+        }
     }
 }

@@ -42,17 +42,22 @@
             this.btnShowBooks = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSearchByCID = new System.Windows.Forms.Button();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.Author = new System.Windows.Forms.Label();
             this.txtCustomerrId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSearchOrder = new System.Windows.Forms.TextBox();
+            this.txtSearchOrderByCID = new System.Windows.Forms.TextBox();
             this.comboBoxOrderedBy = new System.Windows.Forms.ComboBox();
             this.txtOrderId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnSearchOrder = new System.Windows.Forms.Button();
+            this.txtSearchOrderByOrderID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -151,11 +156,11 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(577, 222);
+            this.btnDelete.Location = new System.Drawing.Point(473, 68);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(106, 23);
             this.btnDelete.TabIndex = 52;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Delete order";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -169,14 +174,15 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnSearch
+            // btnSearchByCID
             // 
-            this.btnSearch.Location = new System.Drawing.Point(577, 106);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 50;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearchByCID.Location = new System.Drawing.Point(889, 106);
+            this.btnSearchByCID.Name = "btnSearchByCID";
+            this.btnSearchByCID.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchByCID.TabIndex = 50;
+            this.btnSearchByCID.Text = "Search";
+            this.btnSearchByCID.UseVisualStyleBackColor = true;
+            this.btnSearchByCID.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtISBN
             // 
@@ -222,18 +228,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(536, 37);
+            this.label5.Location = new System.Drawing.Point(886, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(194, 17);
+            this.label5.Size = new System.Drawing.Size(175, 17);
             this.label5.TabIndex = 46;
-            this.label5.Text = "Search Order by Customer ID";
+            this.label5.Text = "Search Customer\'s Orders";
             // 
-            // txtSearchOrder
+            // txtSearchOrderByCID
             // 
-            this.txtSearchOrder.Location = new System.Drawing.Point(539, 69);
-            this.txtSearchOrder.Name = "txtSearchOrder";
-            this.txtSearchOrder.Size = new System.Drawing.Size(143, 22);
-            this.txtSearchOrder.TabIndex = 47;
+            this.txtSearchOrderByCID.Location = new System.Drawing.Point(889, 69);
+            this.txtSearchOrderByCID.Name = "txtSearchOrderByCID";
+            this.txtSearchOrderByCID.Size = new System.Drawing.Size(143, 22);
+            this.txtSearchOrderByCID.TabIndex = 47;
             // 
             // comboBoxOrderedBy
             // 
@@ -249,7 +255,7 @@
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(539, 184);
+            this.txtOrderId.Location = new System.Drawing.Point(315, 69);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.Size = new System.Drawing.Size(143, 22);
             this.txtOrderId.TabIndex = 63;
@@ -257,17 +263,66 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(536, 152);
+            this.label6.Location = new System.Drawing.Point(247, 69);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 17);
             this.label6.TabIndex = 62;
             this.label6.Text = "Order ID";
+            // 
+            // btnSearchOrder
+            // 
+            this.btnSearchOrder.Location = new System.Drawing.Point(889, 233);
+            this.btnSearchOrder.Name = "btnSearchOrder";
+            this.btnSearchOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchOrder.TabIndex = 66;
+            this.btnSearchOrder.Text = "Search";
+            this.btnSearchOrder.UseVisualStyleBackColor = true;
+            this.btnSearchOrder.Click += new System.EventHandler(this.btnSearchOrder_Click_1);
+            // 
+            // txtSearchOrderByOrderID
+            // 
+            this.txtSearchOrderByOrderID.Location = new System.Drawing.Point(889, 196);
+            this.txtSearchOrderByOrderID.Name = "txtSearchOrderByOrderID";
+            this.txtSearchOrderByOrderID.Size = new System.Drawing.Size(143, 22);
+            this.txtSearchOrderByOrderID.TabIndex = 65;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(886, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 17);
+            this.label7.TabIndex = 64;
+            this.label7.Text = "Search order";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(791, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 17);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "Customer ID";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(791, 199);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 17);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Order ID";
             // 
             // OrdersClark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 527);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnSearchOrder);
+            this.Controls.Add(this.txtSearchOrderByOrderID);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxOrderedBy);
@@ -280,10 +335,10 @@
             this.Controls.Add(this.btnShowBooks);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnSearchByCID);
             this.Controls.Add(this.txtISBN);
             this.Controls.Add(this.Author);
-            this.Controls.Add(this.txtSearchOrder);
+            this.Controls.Add(this.txtSearchOrderByCID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCustomerrId);
             this.Controls.Add(this.label1);
@@ -308,19 +363,24 @@
         private System.Windows.Forms.Button btnShowBooks;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnSearchByCID;
         private System.Windows.Forms.TextBox txtISBN;
         private System.Windows.Forms.Label Author;
         private System.Windows.Forms.TextBox txtCustomerrId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSearchOrder;
+        private System.Windows.Forms.TextBox txtSearchOrderByCID;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ComboBox comboBoxOrderedBy;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.TextBox txtOrderId;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSearchOrder;
+        private System.Windows.Forms.TextBox txtSearchOrderByOrderID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

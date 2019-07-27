@@ -22,5 +22,8 @@ namespace HiTech
         public string Category { get; set; }
         public Nullable<int> Auhtor_Id { get; set; }
         public Nullable<int> Publisher_Id { get; set; }
+    
+        public virtual Author Author { get; set; }
+        public virtual Publisher Publisher { get; set; }
     }
 }

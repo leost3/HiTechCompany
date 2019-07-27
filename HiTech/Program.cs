@@ -18,7 +18,7 @@ namespace HiTech
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new OrdersClark());
+            Application.Run(new Inventory_Controller());
 
         }
     }

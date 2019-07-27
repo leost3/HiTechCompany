@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs">
+      <DependentUpon>HiTech.tt</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs">
       <DependentUpon>HiTech.tt</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
     </Compile>
     <Compile Include="Gui\SalesManager.Designer.cs">
       <DependentUpon>SalesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publisher.cs">
+      <DependentUpon>HiTech.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Gui\Accountant.resx">
       <DependentUpon>Accountant.cs</DependentUpon>

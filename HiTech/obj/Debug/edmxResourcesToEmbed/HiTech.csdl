@@ -12,6 +12,8 @@
     <Property Name="Category" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="Auhtor_Id" Type="Int32" />
     <Property Name="Publisher_Id" Type="Int32" />
+    <NavigationProperty Name="Author" Relationship="HiTech_DBModel.FK_Books_Author1" FromRole="Book" ToRole="Author" />
+    <NavigationProperty Name="Publisher" Relationship="HiTech_DBModel.FK_Books_Publishers1" FromRole="Book" ToRole="Publisher" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -27,5 +29,57 @@
   <EntityContainer Name="HiTech_DBEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Books" EntityType="Self.Book" />
     <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Authors" EntityType="HiTech_DBModel.Author" />
+    <EntitySet Name="Publishers" EntityType="HiTech_DBModel.Publisher" />
+    <AssociationSet Name="FK_Books_Author1" Association="HiTech_DBModel.FK_Books_Author1">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Publishers1" Association="HiTech_DBModel.FK_Books_Publishers1">
+      <End Role="Publisher" EntitySet="Publishers" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Author_Id" />
+    </Key>
+    <Property Name="Author_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="HiTech_DBModel.FK_Books_Author1" FromRole="Author" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="PublisherId" />
+    </Key>
+    <Property Name="PublisherId" Type="Int32" Nullable="false" />
+    <Property Name="Publisher_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="HiTech_DBModel.FK_Books_Publishers1" FromRole="Publisher" ToRole="Book" />
+  </EntityType>
+  <Association Name="FK_Books_Author1">
+    <End Type="HiTech_DBModel.Author" Role="Author" Multiplicity="0..1" />
+    <End Type="HiTech_DBModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Author_Id" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Auhtor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Publishers1">
+    <End Type="HiTech_DBModel.Publisher" Role="Publisher" Multiplicity="0..1" />
+    <End Type="HiTech_DBModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="PublisherId" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Publisher_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
