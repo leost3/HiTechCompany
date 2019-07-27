@@ -115,5 +115,23 @@ namespace HiTech
                 txtQte.Text = item.SubItems[3].Text;
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
+            Order order = new Order();
+            int orderId = Convert.ToInt32(txtOrderId.Text);
+            order = HiTechEntitity.Orders.Find(orderId);
+            if (order == null)
+            {
+                MessageBox.Show("Order does not exists", "Error");
+                //Clear function
+                return;
+            }
+            HiTechEntitity.Orders.Remove(order);
+            HiTechEntitity.SaveChanges();
+            MessageBox.Show("Order removed successfully");
+            cleanText();
+        }
     }
 }
