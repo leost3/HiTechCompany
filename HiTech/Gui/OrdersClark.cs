@@ -182,7 +182,6 @@ namespace HiTech
             {
                 foreach (var order in orderList)
                 {
-                    //order.Customer_ID
                     ListViewItem item = new ListViewItem(Convert.ToString(order.Customer_ID));
                     item.SubItems.Add(Convert.ToString(order.order_ID));
                     item.SubItems.Add(Convert.ToString(order.ISBN));

@@ -55,7 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPublisherID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -117,7 +117,7 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Publisher ID";
-            this.columnHeader9.Width = 114;
+            this.columnHeader9.Width = 120;
             // 
             // label3
             // 
@@ -158,7 +158,7 @@
             // 
             // btnShowBooks
             // 
-            this.btnShowBooks.Location = new System.Drawing.Point(481, 258);
+            this.btnShowBooks.Location = new System.Drawing.Point(245, 258);
             this.btnShowBooks.Name = "btnShowBooks";
             this.btnShowBooks.Size = new System.Drawing.Size(75, 29);
             this.btnShowBooks.TabIndex = 53;
@@ -168,7 +168,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(251, 258);
+            this.btnDelete.Location = new System.Drawing.Point(201, 99);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 29);
             this.btnDelete.TabIndex = 52;
@@ -194,6 +194,7 @@
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtBookTitle
             // 
@@ -229,7 +230,7 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(251, 214);
+            this.txtCategory.Location = new System.Drawing.Point(343, 214);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(127, 22);
             this.txtCategory.TabIndex = 64;
@@ -237,7 +238,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 194);
+            this.label4.Location = new System.Drawing.Point(340, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 63;
@@ -245,7 +246,7 @@
             // 
             // txtQOH
             // 
-            this.txtQOH.Location = new System.Drawing.Point(251, 155);
+            this.txtQOH.Location = new System.Drawing.Point(343, 155);
             this.txtQOH.Name = "txtQOH";
             this.txtQOH.Size = new System.Drawing.Size(127, 22);
             this.txtQOH.TabIndex = 62;
@@ -253,7 +254,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 135);
+            this.label5.Location = new System.Drawing.Point(340, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 61;
@@ -261,7 +262,7 @@
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(251, 102);
+            this.txtYear.Location = new System.Drawing.Point(343, 102);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(127, 22);
             this.txtYear.TabIndex = 60;
@@ -269,31 +270,31 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(248, 70);
+            this.label6.Location = new System.Drawing.Point(340, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 17);
             this.label6.TabIndex = 59;
             this.label6.Text = "Year Published";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(793, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 22);
-            this.textBox1.TabIndex = 70;
+            this.txtSearch.Location = new System.Drawing.Point(793, 90);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(127, 22);
+            this.txtSearch.TabIndex = 70;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(790, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 17);
+            this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 69;
-            this.label7.Text = "Category";
+            this.label7.Text = "ISBN";
             // 
             // txtPublisherID
             // 
-            this.txtPublisherID.Location = new System.Drawing.Point(429, 155);
+            this.txtPublisherID.Location = new System.Drawing.Point(521, 155);
             this.txtPublisherID.Name = "txtPublisherID";
             this.txtPublisherID.Size = new System.Drawing.Size(127, 22);
             this.txtPublisherID.TabIndex = 68;
@@ -301,7 +302,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(426, 135);
+            this.label8.Location = new System.Drawing.Point(518, 135);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 17);
             this.label8.TabIndex = 67;
@@ -309,7 +310,7 @@
             // 
             // txtAuthorID
             // 
-            this.txtAuthorID.Location = new System.Drawing.Point(429, 102);
+            this.txtAuthorID.Location = new System.Drawing.Point(521, 102);
             this.txtAuthorID.Name = "txtAuthorID";
             this.txtAuthorID.Size = new System.Drawing.Size(127, 22);
             this.txtAuthorID.TabIndex = 66;
@@ -317,7 +318,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(426, 70);
+            this.label9.Location = new System.Drawing.Point(518, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 65;
@@ -328,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPublisherID);
             this.Controls.Add(this.label8);
@@ -390,7 +391,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPublisherID;
         private System.Windows.Forms.Label label8;

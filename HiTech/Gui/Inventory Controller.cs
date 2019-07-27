@@ -157,5 +157,40 @@ namespace HiTech
             MessageBox.Show("Book saved sucessfully");
             clearText();
         }
+       
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntity = new HiTech_DBEntities4();
+
+            int ISBN = Convert.ToInt32(txtSearch.Text);
+            var book = HiTechEntity.Books.Find(ISBN);
+
+            if (book == null)
+            {
+                MessageBox.Show("Book does not exist", "Error");
+                return;
+            }
+
+            var myBookList = from book1 in HiTechEntity.Books
+                           where book1.ISBN == ISBN
+                           select book1;
+            listView1.Items.Clear();
+
+            foreach (var book1 in myBookList)
+            {
+                ListViewItem item = new ListViewItem(Convert.ToString(book1.ISBN));
+                item.SubItems.Add(book1.Title);
+                item.SubItems.Add(Convert.ToString(book1.UnitPrice));
+                item.SubItems.Add(Convert.ToString(book1.YearPublished));
+                item.SubItems.Add(Convert.ToString(book1.QOH));
+                item.SubItems.Add(book1.Category);
+                item.SubItems.Add(Convert.ToString(book1.Auhtor_Id));
+                item.SubItems.Add(Convert.ToString(book1.Publisher_Id));
+                listView1.Items.Add(item);
+            }
+
+           
+        }
     }
 }
