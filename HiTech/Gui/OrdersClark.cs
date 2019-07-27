@@ -59,11 +59,11 @@ namespace HiTech
         {
             HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
             Order order = new Order();
-            int orderId = Convert.ToInt32(txtOrderId.Text.Trim());
-            order = HiTechEntitity.Orders.Find(orderId);
+            int orderId = Convert.ToInt32(txtOrderId.Text);
+                order = HiTechEntitity.Orders.Find(orderId);
             if (order == null)
             {
-                MessageBox.Show("User does not exists", "Error");
+                MessageBox.Show("Order does not exists", "Error");
                 //Clear function
                 return;
             }
@@ -87,8 +87,9 @@ namespace HiTech
             listView1.Items.Clear();
             foreach (var order in orderList)
             {
-                ListViewItem item = new ListViewItem(Convert.ToString(order.order_ID));
-                item.SubItems.Add(Convert.ToString(order.Customer_ID));
+                //order.Customer_ID
+                ListViewItem item = new ListViewItem(Convert.ToString(order.Customer_ID));
+                item.SubItems.Add(Convert.ToString(order.order_ID));
                 item.SubItems.Add(Convert.ToString(order.ISBN));
                 item.SubItems.Add(Convert.ToString(order.Qte));
                 item.SubItems.Add(order.OrderedBy);
