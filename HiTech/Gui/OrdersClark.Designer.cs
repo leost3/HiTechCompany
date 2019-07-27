@@ -32,8 +32,9 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.txtQte = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.comboBoxOrderedBy = new System.Windows.Forms.ComboBox();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtOrderId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -64,12 +64,13 @@
             this.columnHeader3,
             this.columnHeader2,
             this.columnHeader1});
-            this.listView1.Location = new System.Drawing.Point(12, 310);
+            this.listView1.Location = new System.Drawing.Point(56, 300);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(788, 128);
+            this.listView1.Size = new System.Drawing.Size(1102, 215);
             this.listView1.TabIndex = 58;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeader4
             // 
@@ -86,15 +87,20 @@
             this.columnHeader6.Text = "Book ISBN";
             this.columnHeader6.Width = 181;
             // 
-            // columnHeader1
+            // columnHeader3
             // 
-            this.columnHeader1.DisplayIndex = 3;
-            this.columnHeader1.Text = "Total";
+            this.columnHeader3.DisplayIndex = 5;
+            this.columnHeader3.Text = "Qde";
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Ordered By";
             this.columnHeader2.Width = 153;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 3;
+            this.columnHeader1.Text = "Total";
             // 
             // label3
             // 
@@ -135,12 +141,13 @@
             // 
             // btnShowBooks
             // 
-            this.btnShowBooks.Location = new System.Drawing.Point(539, 271);
+            this.btnShowBooks.Location = new System.Drawing.Point(416, 271);
             this.btnShowBooks.Name = "btnShowBooks";
             this.btnShowBooks.Size = new System.Drawing.Size(75, 23);
             this.btnShowBooks.TabIndex = 53;
             this.btnShowBooks.Text = "List";
             this.btnShowBooks.UseVisualStyleBackColor = true;
+            this.btnShowBooks.Click += new System.EventHandler(this.btnShowBooks_Click);
             // 
             // btnDelete
             // 
@@ -159,6 +166,7 @@
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -215,9 +223,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(536, 37);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 17);
+            this.label5.Size = new System.Drawing.Size(194, 17);
             this.label5.TabIndex = 46;
-            this.label5.Text = "Search Order by Users ID";
+            this.label5.Text = "Search Order by Customer ID";
             // 
             // txtSearchOrder
             // 
@@ -237,11 +245,6 @@
             this.comboBoxOrderedBy.Name = "comboBoxOrderedBy";
             this.comboBoxOrderedBy.Size = new System.Drawing.Size(121, 24);
             this.comboBoxOrderedBy.TabIndex = 61;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.DisplayIndex = 5;
-            this.columnHeader3.Text = "Qde";
             // 
             // txtOrderId
             // 
@@ -263,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 527);
             this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxOrderedBy);
@@ -285,6 +288,7 @@
             this.Controls.Add(this.label1);
             this.Name = "OrdersClark";
             this.Text = "OrdersClark";
+            this.Load += new System.EventHandler(this.OrdersClark_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

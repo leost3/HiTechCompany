@@ -66,9 +66,7 @@
     <Compile Include="Gui\Accountant.Designer.cs">
       <DependentUpon>Accountant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Business\Book.cs" />
     <Compile Include="Business\User.cs" />
-    <Compile Include="DataAccess\BookDB.cs" />
     <Compile Include="DataAccess\UserDB.cs" />
     <Compile Include="DataAccess\UtilityDB.cs" />
     <Compile Include="Gui\Inventory Controller.cs">

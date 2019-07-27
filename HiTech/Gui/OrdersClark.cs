@@ -18,6 +18,14 @@ namespace HiTech
             InitializeComponent();
         }
 
+        private void cleanText()
+        {
+            txtCustomerrId.Text = String.Empty;
+            txtISBN.Text = "";
+            txtQte.Text = "";
+            txtOrderId.Text = "";
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             
@@ -47,8 +55,64 @@ namespace HiTech
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
+            Order order = new Order();
+            int orderId = Convert.ToInt32(txtOrderId.Text.Trim());
+            order = HiTechEntitity.Orders.Find(orderId);
+            if (order == null)
+            {
+                MessageBox.Show("User does not exists", "Error");
+                //Clear function
+                return;
+            }
+            order.Customer_ID = Convert.ToInt32(txtCustomerrId.Text);
+            order.ISBN = Convert.ToInt32(txtISBN.Text);
+            order.OrderedBy = Convert.ToString(comboBoxOrderedBy.SelectedItem);
+            order.Qte = Convert.ToInt32(txtQte.Text);
 
+            HiTechEntitity.SaveChanges();
+            MessageBox.Show("Order updated sucessfully");
+            cleanText();
+        }
 
+        private void btnShowBooks_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntitity = new HiTech_DBEntities4();
 
+            var orderList = from order in HiTechEntitity.Orders
+                            select order;
+
+            listView1.Items.Clear();
+            foreach (var order in orderList)
+            {
+                ListViewItem item = new ListViewItem(Convert.ToString(order.order_ID));
+                item.SubItems.Add(Convert.ToString(order.Customer_ID));
+                item.SubItems.Add(Convert.ToString(order.ISBN));
+                item.SubItems.Add(Convert.ToString(order.Qte));
+                item.SubItems.Add(order.OrderedBy);
+                item.SubItems.Add(Convert.ToString(order.total));
+                listView1.Items.Add(item);
+            }
+        }
+
+        private void OrdersClark_Load(object sender, EventArgs e)
+        {
+            listView1.FullRowSelect = true;
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                txtCustomerrId.Text = item.SubItems[0].Text;
+                txtOrderId.Text = item.SubItems[1].Text;  
+                txtISBN.Text = item.SubItems[2].Text;  
+                comboBoxOrderedBy.Text = item.SubItems[4].Text;
+                txtQte.Text = item.SubItems[3].Text;
+            }
+        }
     }
 }
