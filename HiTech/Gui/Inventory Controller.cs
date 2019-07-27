@@ -189,8 +189,6 @@ namespace HiTech
                 item.SubItems.Add(Convert.ToString(book1.Publisher_Id));
                 listView1.Items.Add(item);
             }
-
-           
         }
     }
 }

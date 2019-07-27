@@ -112,5 +112,26 @@ namespace HiTech.DataAccess
             return res;
         }
 
+        public static string SearchCustomer(Customer customer)
+        {
+            if (connDB.State == System.Data.ConnectionState.Closed)
+            {
+                connDB = UtilityDB.ConnectDB();
+                cmd = new SqlCommand();
+            }
+
+            //cmd.Connection = connDB;
+            //cmd.CommandText = string.Format("SELECT [User] FROM Employee WHERE UserId='{0}'", UserId);
+            //string FirstName = (String)cmd.ExecuteScalar();
+            //connDB.Close();
+            //return FirstName;
+
+            cmd.Connection = connDB;
+            cmd.CommandText = string.Format("SELECT FirstName + LastName FROM [Customer] WHERE Customer_Id='{0}'", customer.CustomerId);
+            string FirstName = (String)cmd.ExecuteScalar();
+            connDB.Close();
+            return FirstName;
+        }
+
     }
 }

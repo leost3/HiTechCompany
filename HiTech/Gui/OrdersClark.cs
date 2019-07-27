@@ -77,7 +77,8 @@ namespace HiTech
             order.ISBN = Convert.ToInt32(txtISBN.Text);
             order.OrderedBy = Convert.ToString(comboBoxOrderedBy.SelectedItem);
             order.Qte = Convert.ToInt32(txtQte.Text);
-
+            Book book = HiTechEntitity.Books.Find(order.ISBN);
+            order.total = order.Qte * book.UnitPrice;
             HiTechEntitity.SaveChanges();
             MessageBox.Show("Order updated sucessfully");
             clearText();
@@ -114,11 +115,11 @@ namespace HiTech
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem item = listView1.SelectedItems[0];
-                txtCustomerrId.Text = item.SubItems[0].Text;
-                txtOrderId.Text = item.SubItems[1].Text;  
-                txtISBN.Text = item.SubItems[2].Text;  
-                comboBoxOrderedBy.Text = item.SubItems[4].Text;
-                txtQte.Text = item.SubItems[3].Text;
+                txtCustomerrId.Text = item.SubItems[0].Text.Trim();
+                txtOrderId.Text = item.SubItems[1].Text.Trim();  
+                txtISBN.Text = item.SubItems[2].Text.Trim();  
+                comboBoxOrderedBy.Text = item.SubItems[4].Text.Trim();
+                txtQte.Text = item.SubItems[3].Text.Trim();
             }
         }
 

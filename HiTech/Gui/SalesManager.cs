@@ -155,5 +155,13 @@ namespace HiTech
                 //txtEmployeeId.Enabled = false;
             }
         }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer();
+            customer.CustomerId = Convert.ToInt32(txtSearchCustId.Text);
+            string customerName = customer.SearchCustomer(customer);
+            MessageBox.Show("Customer Name is :" + customerName);
+        }
     }
 }

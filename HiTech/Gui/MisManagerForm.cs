@@ -39,12 +39,12 @@ namespace HiTech.Gui
                 //create object
                 User user = new User();
                 //fill the object with textbox input
-                user.UserId = Convert.ToInt32(txtUserId.Text);
-                user.FirstName = txtFn.Text;
-                user.LastName = txtLn.Text;
-                user.Username = txtUsername.Text;
-                user.Password = txtPassword.Text;
-                user.RoleId = Convert.ToInt32(txtRoleID.Text);
+                user.UserId = Convert.ToInt32(txtUserId.Text.Trim());
+                user.FirstName = txtFn.Text.Trim();
+                user.LastName = txtLn.Text.Trim();
+                user.Username = txtUsername.Text.Trim();
+                user.Password = txtPassword.Text.Trim();
+                user.RoleId = Convert.ToInt32(txtRoleID.Text.Trim());
                 //call function to save employee in database
                 if (user.Save(user)) //if(emp.SaveEmployee(emp)==true)
                     MessageBox.Show("Employee Save correctly");
@@ -89,12 +89,12 @@ namespace HiTech.Gui
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem item = listView1.SelectedItems[0];
-                txtUserId.Text = item.SubItems[0].Text;
-                txtUsername.Text = item.SubItems[1].Text;
-                txtPassword.Text = item.SubItems[2].Text;
-                txtFn.Text = item.SubItems[3].Text;
-                txtLn.Text = item.SubItems[4].Text;
-                txtRoleID.Text = item.SubItems[5].Text;
+                txtUserId.Text = item.SubItems[0].Text.Trim();
+                txtUsername.Text = item.SubItems[1].Text.Trim();
+                txtPassword.Text = item.SubItems[2].Text.Trim();
+                txtFn.Text = item.SubItems[3].Text.Trim();
+                txtLn.Text = item.SubItems[4].Text.Trim();
+                txtRoleID.Text = item.SubItems[5].Text.Trim();
 
             }
 

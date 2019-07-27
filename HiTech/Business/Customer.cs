@@ -48,5 +48,10 @@ namespace HiTech.Business
         {
             return CustomerDB.updateCustomer(customer);
         }
+
+        public string SearchCustomer(Customer customer)
+        {
+            return CustomerDB.SearchCustomer(customer);
+        }
     }
 }

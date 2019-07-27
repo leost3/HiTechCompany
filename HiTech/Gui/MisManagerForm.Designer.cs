@@ -30,8 +30,11 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnListEmps = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -52,9 +55,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -66,9 +66,9 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader3});
-            this.listView1.Location = new System.Drawing.Point(12, 450);
+            this.listView1.Location = new System.Drawing.Point(414, 69);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(671, 97);
+            this.listView1.Size = new System.Drawing.Size(697, 413);
             this.listView1.TabIndex = 29;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -78,6 +78,16 @@
             // 
             this.columnHeader4.Text = "UserID";
             this.columnHeader4.Width = 105;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 3;
+            this.columnHeader1.Text = "Username";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 4;
+            this.columnHeader2.Text = "Password";
             // 
             // columnHeader5
             // 
@@ -91,9 +101,13 @@
             this.columnHeader6.Text = "Last Name";
             this.columnHeader6.Width = 181;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "RoleID";
+            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 410);
+            this.btnAdd.Location = new System.Drawing.Point(40, 372);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 28;
@@ -103,7 +117,7 @@
             // 
             // btnListEmps
             // 
-            this.btnListEmps.Location = new System.Drawing.Point(430, 410);
+            this.btnListEmps.Location = new System.Drawing.Point(40, 459);
             this.btnListEmps.Name = "btnListEmps";
             this.btnListEmps.Size = new System.Drawing.Size(75, 23);
             this.btnListEmps.TabIndex = 27;
@@ -113,7 +127,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(278, 410);
+            this.btnDelete.Location = new System.Drawing.Point(40, 430);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 26;
@@ -123,7 +137,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(143, 410);
+            this.btnUpdate.Location = new System.Drawing.Point(38, 401);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 25;
@@ -133,7 +147,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(427, 125);
+            this.btnSearch.Location = new System.Drawing.Point(184, 429);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 24;
@@ -202,7 +216,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(408, 97);
+            this.txtSearch.Location = new System.Drawing.Point(165, 401);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(112, 22);
             this.txtSearch.TabIndex = 33;
@@ -210,7 +224,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(405, 69);
+            this.label4.Location = new System.Drawing.Point(162, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 17);
             this.label4.TabIndex = 34;
@@ -263,20 +277,6 @@
             this.label12.Size = new System.Drawing.Size(69, 17);
             this.label12.TabIndex = 56;
             this.label12.Text = "Password";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.DisplayIndex = 3;
-            this.columnHeader1.Text = "Username";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.DisplayIndex = 4;
-            this.columnHeader2.Text = "Password";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "RoleID";
             // 
             // MisManagerForm
             // 

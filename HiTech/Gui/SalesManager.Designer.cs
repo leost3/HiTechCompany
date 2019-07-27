@@ -44,6 +44,11 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtZipCode = new System.Windows.Forms.TextBox();
@@ -56,11 +61,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtFaxNum = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label3
@@ -138,6 +138,7 @@
             this.btnSearchCustomer.TabIndex = 37;
             this.btnSearchCustomer.Text = "Search";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // txtCFn
             // 
@@ -204,6 +205,31 @@
             // 
             this.columnHeader6.Text = "Last Name";
             this.columnHeader6.Width = 80;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "City";
+            this.columnHeader1.Width = 52;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ZipCode";
+            this.columnHeader2.Width = 104;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Phone Number";
+            this.columnHeader3.Width = 119;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Fax Number";
+            this.columnHeader7.Width = 121;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Credit Limit";
+            this.columnHeader8.Width = 117;
             // 
             // txtPhoneNumber
             // 
@@ -300,31 +326,6 @@
             this.label9.Size = new System.Drawing.Size(84, 17);
             this.label9.TabIndex = 52;
             this.label9.Text = "Fax Number";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "City";
-            this.columnHeader1.Width = 52;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "ZipCode";
-            this.columnHeader2.Width = 104;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Phone Number";
-            this.columnHeader3.Width = 119;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Fax Number";
-            this.columnHeader7.Width = 121;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Credit Limit";
-            this.columnHeader8.Width = 117;
             // 
             // SalesManager
             // 
