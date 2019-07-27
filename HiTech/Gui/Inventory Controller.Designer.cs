@@ -36,7 +36,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -74,7 +73,6 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader7,
-            this.columnHeader8,
             this.columnHeader9});
             this.listView1.Location = new System.Drawing.Point(12, 297);
             this.listView1.Name = "listView1";
@@ -115,10 +113,6 @@
             this.columnHeader7.Text = "Author ID";
             this.columnHeader7.Width = 95;
             // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Width = 119;
-            // 
             // columnHeader9
             // 
             this.columnHeader9.Text = "Publisher ID";
@@ -141,7 +135,6 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(127, 22);
             this.txtPrice.TabIndex = 56;
-            this.txtPrice.Text = "99,99";
             // 
             // label2
             // 
@@ -170,6 +163,7 @@
             this.btnShowBooks.TabIndex = 53;
             this.btnShowBooks.Text = "List";
             this.btnShowBooks.UseVisualStyleBackColor = true;
+            this.btnShowBooks.Click += new System.EventHandler(this.btnShowBooks_Click);
             // 
             // btnDelete
             // 
@@ -204,7 +198,6 @@
             this.txtBookTitle.Name = "txtBookTitle";
             this.txtBookTitle.Size = new System.Drawing.Size(127, 22);
             this.txtBookTitle.TabIndex = 49;
-            this.txtBookTitle.Text = "fight club";
             // 
             // Author
             // 
@@ -221,7 +214,6 @@
             this.txtBookISBN.Name = "txtBookISBN";
             this.txtBookISBN.Size = new System.Drawing.Size(127, 22);
             this.txtBookISBN.TabIndex = 47;
-            this.txtBookISBN.Text = "12";
             // 
             // label1
             // 
@@ -238,7 +230,6 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(127, 22);
             this.txtCategory.TabIndex = 64;
-            this.txtCategory.Text = "Fiction";
             // 
             // label4
             // 
@@ -255,7 +246,6 @@
             this.txtQOH.Name = "txtQOH";
             this.txtQOH.Size = new System.Drawing.Size(127, 22);
             this.txtQOH.TabIndex = 62;
-            this.txtQOH.Text = "500";
             // 
             // label5
             // 
@@ -272,7 +262,6 @@
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(127, 22);
             this.txtYear.TabIndex = 60;
-            this.txtYear.Text = "1999";
             // 
             // label6
             // 
@@ -305,7 +294,6 @@
             this.txtPublisherID.Name = "txtPublisherID";
             this.txtPublisherID.Size = new System.Drawing.Size(127, 22);
             this.txtPublisherID.TabIndex = 68;
-            this.txtPublisherID.Text = "2";
             // 
             // label8
             // 
@@ -322,7 +310,6 @@
             this.txtAuthorID.Name = "txtAuthorID";
             this.txtAuthorID.Size = new System.Drawing.Size(127, 22);
             this.txtAuthorID.TabIndex = 66;
-            this.txtAuthorID.Text = "2";
             // 
             // label9
             // 
@@ -365,6 +352,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Inventory_Controller";
             this.Text = "Inventory_Controller";
+            this.Load += new System.EventHandler(this.Inventory_Controller_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +386,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;

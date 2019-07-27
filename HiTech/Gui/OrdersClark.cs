@@ -18,7 +18,7 @@ namespace HiTech
             InitializeComponent();
         }
 
-        private void cleanText()
+        private void clearText()
         {
             txtCustomerrId.Text = String.Empty;
             txtISBN.Text = "";
@@ -33,12 +33,18 @@ namespace HiTech
             HiTech_DBEntities4 hiTechEntity = new HiTech_DBEntities4();
 
             Order order = new Order();
-            //Customer ID
-            //Book Name or Book ISBN?
-            // Total
-            // Ordered by
+            int customerId = Convert.ToInt32(txtCustomerrId.Text);
 
-            order.Customer_ID = Convert.ToInt32(txtCustomerrId.Text);
+            Order order1 = hiTechEntity.Orders.Find(customerId);
+
+            if (order1 != null)
+            {
+                MessageBox.Show("Duplicated Employee Id", "Error");
+                clearText();
+                return;
+            }
+
+            order.Customer_ID = customerId;
             order.ISBN = Convert.ToInt32(txtISBN.Text);
             Book book = hiTechEntity.Books.Find(order.ISBN); // returns line from referred book table
             order.Qte = Convert.ToInt32(txtQte.Text);
@@ -74,7 +80,7 @@ namespace HiTech
 
             HiTechEntitity.SaveChanges();
             MessageBox.Show("Order updated sucessfully");
-            cleanText();
+            clearText();
         }
 
         private void btnShowBooks_Click(object sender, EventArgs e)
@@ -131,7 +137,7 @@ namespace HiTech
             HiTechEntitity.Orders.Remove(order);
             HiTechEntitity.SaveChanges();
             MessageBox.Show("Order removed successfully");
-            cleanText();
+            clearText();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
