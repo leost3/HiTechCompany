@@ -93,5 +93,39 @@ namespace HiTech
             listView1.FullRowSelect = true;
         }
 
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (listView1.Items.Count > 0)
+            {
+                ListViewItem item = listView1.SelectedItems[0];
+                txtBookISBN.Text = item.SubItems[0].Text;
+                txtBookTitle.Text = item.SubItems[1].Text;
+                txtPrice.Text = item.SubItems[2].Text;
+                txtYear.Text = item.SubItems[3].Text;
+                txtQOH.Text = item.SubItems[4].Text;
+                txtCategory.Text = item.SubItems[5].Text;
+                txtAuthorID.Text = item.SubItems[6].Text;
+                txtPublisherID.Text = item.SubItems[7].Text;
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            HiTech_DBEntities4 HiTechEntity = new HiTech_DBEntities4();
+
+            int ISBN = Convert.ToInt32(txtBookISBN.Text);
+            var book = HiTechEntity.Books.Find(ISBN);
+            if (book == null)
+            {
+                MessageBox.Show("Book does not exist", "Error");
+                return;
+            }
+            HiTechEntity.Books.Remove(book);
+            HiTechEntity.SaveChanges();
+
+            MessageBox.Show("Book removed sucessfully");
+
+        }
     }
 }
